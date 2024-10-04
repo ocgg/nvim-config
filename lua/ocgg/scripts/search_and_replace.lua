@@ -1,5 +1,20 @@
 local M = {}
 
+-- Sanitize the pattern to be used with the substitute command,
+-- by escaping newlines, removing end of line and escaping slashes.
+local function sanitize(pattern)
+	local substitutes = {
+		{ "\n", "\\n" },
+		{ "^I", "\\n" },
+		{ "$", "" },
+		{ "/", "\\/" },
+	}
+	for _, rep in ipairs(substitutes) do
+		pattern = pattern:gsub(rep[1], rep[2])
+	end
+	return pattern
+end
+
 --[[
 Prepare search and replace command like this:
 
@@ -25,9 +40,7 @@ function M.search()
 		-- save visual selection in register v
 		vim.cmd('normal! "vy')
 
-		REG_CONTENT = vim.fn.getreg("v")
-		-- escape newlines & remove end of line from register
-		REG_CONTENT = REG_CONTENT:gsub("\n", "\\n"):gsub("^I", "\\n"):gsub("$", "")
+		REG_CONTENT = sanitize(vim.fn.getreg("v"))
 	end
 
 	-- use either v reg content or current word
