@@ -4,6 +4,9 @@ local function map(mode, lhs, rhs, desc)
 	vim.keymap.set(mode, lhs, rhs, { silent = true, desc = desc or rhs })
 end
 
+-- no highlight search
+map("n", "<leader><space>", "<CMD>noh<CR>", "No Highlight Search")
+
 -- Exit insert mode
 map("i", "jk", "<ESC>")
 
