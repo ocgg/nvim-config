@@ -25,12 +25,14 @@ function M.search()
 		-- save visual selection in register v
 		vim.cmd('normal! "vy')
 
-		-- content of register v with escaped newlines & end of line
-		REGISTER = vim.fn.getreg("v")
-		REGISTER = REGISTER:gsub("\n", "\\n"):gsub("^I", "\\n"):gsub("$", "")
+		REG_CONTENT = vim.fn.getreg("v")
+		-- escape newlines & remove end of line from register
+		REG_CONTENT = REG_CONTENT:gsub("\n", "\\n"):gsub("^I", "\\n"):gsub("$", "")
 	end
 
-	local pattern = v_or_V and REGISTER or vim.fn.expand("<cword>")
+	-- use either v reg content or current word
+	local pattern = v_or_V and REG_CONTENT or vim.fn.expand("<cword>")
+	-- type the substitution command & place the cursor
 	vim.api.nvim_input("<Esc>:%s/" .. pattern .. "//g<left><left>")
 end
 
