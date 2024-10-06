@@ -1,4 +1,5 @@
 -- from reddit (https://www.reddit.com/r/neovim/comments/1ct2w2h/lua_adaptation_of_vimcool_auto_nohlsearch/)
+-- executes :nohl after a search AND after the cursor moves
 vim.api.nvim_create_autocmd("CursorMoved", {
 	group = vim.api.nvim_create_augroup("auto-hlsearch", { clear = true }),
 	callback = function()
@@ -9,3 +10,6 @@ vim.api.nvim_create_autocmd("CursorMoved", {
 		end
 	end,
 })
+
+-- executes gv after moving visual line selection with < or >
+-- TODO
