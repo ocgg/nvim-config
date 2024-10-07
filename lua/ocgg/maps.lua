@@ -38,6 +38,10 @@ vim.keymap.set("n", "<leader>dl", vim.diagnostic.setloclist, { desc = "Open diag
 
 -- CUSTOM
 
+-- for visual line reindent
+map("v", "<", "<gv")
+map("v", ">", ">gv")
+
 -- Search and Replace
 vim.keymap.set(
 	{ "n", "v" },

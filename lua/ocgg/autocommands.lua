@@ -10,6 +10,3 @@ vim.api.nvim_create_autocmd("CursorMoved", {
 		end
 	end,
 })
-
--- executes gv after moving visual line selection with < or >
--- TODO
