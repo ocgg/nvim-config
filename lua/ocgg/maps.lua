@@ -46,6 +46,6 @@ map("v", ">", ">gv")
 vim.keymap.set(
 	{ "n", "v" },
 	"<leader>sr",
-	require("ocgg.scripts.search_and_replace").search,
+	require("ocgg.scripts.search_and_replace").replace,
 	{ desc = "Search and Replace" }
 )
