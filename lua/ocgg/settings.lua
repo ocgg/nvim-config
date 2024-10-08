@@ -21,7 +21,7 @@ o.tabstop = 4
 o.mouse = "a"
 o.title = true
 -- o.hidden = true
-o.ttimeoutlen = 0
+-- o.ttimeoutlen = 0
 -- o.wildmenu = true
 -- o.showcmd = true
 o.showmatch = true
@@ -36,8 +36,7 @@ o.undofile = true
 o.ignorecase = true
 o.smartcase = true
 vim.wo.signcolumn = "yes"
--- Decrease update time
-o.updatetime = 250
+-- o.updatetime = 250
 o.timeoutlen = 300
 -- o.completeopt = 'menuone,noselect'
 -- vertical line
