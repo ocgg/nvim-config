@@ -13,6 +13,7 @@ o.clipboard = "unnamedplus"
 o.syntax = "on"
 -- o.autoindent = true
 -- o.cursorline = true
+o.wrap = false
 o.expandtab = true
 o.shiftwidth = 4
 o.tabstop = 4
