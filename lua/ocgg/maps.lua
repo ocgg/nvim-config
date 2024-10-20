@@ -39,8 +39,6 @@ vim.keymap.set("n", "<leader>dl", vim.diagnostic.setloclist, { desc = "Open diag
 map("n", "<leader>rn", vim.lsp.buf.rename, "[R]e[n]ame")
 map("n", "<leader>ca", vim.lsp.buf.code_action, "[C]ode [A]ction")
 
--- CUSTOM
-
 -- for visual line reindent
 map("v", "<", "<gv")
 map("v", ">", ">gv")
