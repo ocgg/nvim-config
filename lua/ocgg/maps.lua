@@ -36,6 +36,9 @@ vim.keymap.set("n", "<leader>dn", vim.diagnostic.goto_next, { desc = "Go to next
 vim.keymap.set("n", "<leader>do", vim.diagnostic.open_float, { desc = "Open floating diagnostic message" })
 vim.keymap.set("n", "<leader>dl", vim.diagnostic.setloclist, { desc = "Open diagnostics list" })
 
+map("n", "<leader>rn", vim.lsp.buf.rename, "[R]e[n]ame")
+map("n", "<leader>ca", vim.lsp.buf.code_action, "[C]ode [A]ction")
+
 -- CUSTOM
 
 -- for visual line reindent
