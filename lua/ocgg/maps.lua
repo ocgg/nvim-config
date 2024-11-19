@@ -14,12 +14,6 @@ map("i", "jk", "<ESC>")
 map("n", "<leader>v", "<CMD>vsplit<CR>", "Vertical Split")
 map("n", "<leader>x", "<CMD>split<CR>", "Horizontal Split")
 
--- Window Navigation
--- map("n", "<C-h>", "<C-w>h")
--- map("n", "<C-l>", "<C-w>l")
--- map("n", "<C-k>", "<C-w>k")
--- map("n", "<C-j>", "<C-w>j")
-
 -- Resize Windows
 map("n", "<C-Left>", "<C-w><")
 map("n", "<C-Right>", "<C-w>>")
@@ -42,6 +36,16 @@ map("n", "<leader>ca", vim.lsp.buf.code_action, "[C]ode [A]ction")
 -- for visual line reindent
 map("v", "<", "<gv")
 map("v", ">", ">gv")
+
+-- Alt+j/k to move 5 lines up/down
+map("n", "<A-j>", "5jzz", "Move 5 lines down")
+map("n", "<A-k>", "5kzz", "Move 5 lines up")
+
+-- Alt+Shift+J/K to move lines or blocks (in visual line mode)
+map("x", "<A-J>", ":m '>+1<CR>gv=gv", "Move line/block down")
+map("x", "<A-K>", ":m '<-2<CR>gv=gv", "Move line/block up")
+map("n", "<A-J>", ":m .+1<CR>==", "Move line down")
+map("n", "<A-K>", ":m .-2<CR>==", "Move line up")
 
 -- Search and Replace
 vim.keymap.set(
