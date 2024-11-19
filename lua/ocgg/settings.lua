@@ -23,7 +23,6 @@ o.tabstop = 4
 o.mouse = "a"
 o.title = true
 -- o.hidden = true
--- o.ttimeoutlen = 0
 -- o.wildmenu = true
 -- o.showcmd = true
 o.showmatch = true
@@ -43,3 +42,5 @@ o.timeoutlen = 300
 -- o.completeopt = 'menuone,noselect'
 -- vertical line
 o.colorcolumn = "80"
+o.scrolloff = 10
+o.sidescrolloff = 15
