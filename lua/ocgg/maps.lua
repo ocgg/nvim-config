@@ -4,6 +4,8 @@ local function map(mode, lhs, rhs, desc)
 	vim.keymap.set(mode, lhs, rhs, { silent = true, desc = desc or rhs })
 end
 
+map("n", "<leader>n", "<cmd>NvimTreeToggle<cr>", "Toggle NvimTree")
+
 -- no highlight search
 map("n", "<leader><space>", "<CMD>noh<CR>", "No Highlight Search")
 
