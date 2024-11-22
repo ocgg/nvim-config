@@ -10,9 +10,17 @@
 -- }
 
 return {
-  'nvim-tree/nvim-tree.lua',
-  config = function()
-    require('nvim-tree').setup()
-    vim.keymap.set('n', '<leader>n', '<cmd>NvimTreeToggle<cr>', { desc = 'Toggle NvimTree' })
-  end,
+	"nvim-tree/nvim-tree.lua",
+	dependencies = {
+		"nvim-tree/nvim-web-devicons",
+	},
+	config = function()
+		require("nvim-tree").setup({
+			filters = {
+				git_ignored = false,
+				dotfiles = false,
+				custom = { "node_modules$", "\\.git$" },
+			},
+		})
+	end,
 }
